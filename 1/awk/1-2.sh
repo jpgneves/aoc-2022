@@ -1,0 +1,1 @@
+cat input | awk 'BEGIN { i=1; current = 0; } { if (NF == 0) { elf[i] = current; i += 1; current = 0 } else { current += $1; } } END { elf[i] = current; n = asort(elf); for (i = n; i > n-3; i--) { sum += elf[i] } print sum }'
